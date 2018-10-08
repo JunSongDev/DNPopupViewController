@@ -31,7 +31,9 @@
     UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:viewControl];
     
     DNPresentationConfig * config = [[DNPresentationConfig alloc] initWithModalSize:CGSizeMake(SCREEN_W*0.75, SCREEN_W) position:DNPresentationControllerPositionCenter];
-    [[DNPresentationManager defaultManager] dn_popModalControllerWithConfig:config presentingVC:self presentedVC:nav];
+    [[DNPresentationManager defaultManager] dn_popModalControllerWithConfig:config
+                                                               presentingVC:self
+                                                                presentedVC:nav];
 }
 
 - (IBAction)buttomButton:(id)sender {

@@ -10,6 +10,11 @@
 
 static DNPresentationManager *_defaultManager = nil;
 
+@interface DNPresentationManager ()
+
+@property (nonatomic, strong) UIViewController * presentingVC;
+@end
+
 @implementation DNPresentationManager
 
 + (instancetype)allocWithZone:(struct _NSZone *)zone {

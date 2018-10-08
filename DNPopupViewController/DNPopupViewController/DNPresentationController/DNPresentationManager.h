@@ -23,7 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param presentingVC 弹窗的s父视图
  *  @param presentedVC  将要显示的弹窗视图
  */
-- (void)dn_popModalControllerWithConfig:(DNPresentationConfig *)config presentingVC:(UIViewController *)presentingVC presentedVC:(UIViewController *)presentedVC;
+- (void)dn_popModalControllerWithConfig:(DNPresentationConfig *)config
+                           presentingVC:(UIViewController *)presentingVC
+                            presentedVC:(UIViewController *)presentedVC;
 @end
 
 NS_ASSUME_NONNULL_END
