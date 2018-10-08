@@ -31,12 +31,12 @@ static DNPresentationManager *_defaultManager = nil;
     return _defaultManager;
 }
 
-- (void)dn_popModalControllerWithConfig:(DNPresentationConfig *)config superVC:(UIViewController *)superVC subVC:(UIViewController *)subVC {
+- (void)dn_popModalControllerWithConfig:(DNPresentationConfig *)config presentingVC:(UIViewController *)presentingVC presentedVC:(UIViewController *)presentedVC {
     
-    self.config = config;
-    subVC.transitioningDelegate  = self.config;
-    subVC.modalPresentationStyle = UIModalPresentationCustom;
-    [superVC presentViewController:subVC animated:YES completion:^{
+    _config = config;
+    presentedVC.transitioningDelegate  = self.config;
+    presentedVC.modalPresentationStyle = UIModalPresentationCustom;
+    [presentingVC presentViewController:presentedVC animated:YES completion:^{
         
     }];
 }
