@@ -32,16 +32,20 @@
         self.presentedView.frame = CGRectMake(SCREEN_W*0.5-self.controlSize.width*0.5, SCREEN_H*0.5-self.controlSize.height*0.5, self.controlSize.width, self.controlSize.height);
     }
     else {
-        self.presentedView.frame = CGRectMake(0, SCREEN_H-self.controlSize.height, self.controlSize.width, self.controlSize.height);
+        self.presentedView.frame = CGRectMake(SCREEN_W*0.5-self.controlSize.width*0.5, SCREEN_H-self.controlSize.height, self.controlSize.width, self.controlSize.height);
     }
     [self.containerView insertSubview:self.bgLayerView atIndex:0];
 }
 
-- (void)dismissClick {
-    [self.presentedViewController dismissViewControllerAnimated:YES completion:^{
-        [self.bgLayerView removeFromSuperview];
-    }];
+- (void)dismissalTransitionDidEnd:(BOOL)completed {
+    [self.bgLayerView removeFromSuperview];
 }
+
+//- (void)dismissClick {
+//    [self.presentedViewController dismissViewControllerAnimated:YES completion:^{
+//        [self.bgLayerView removeFromSuperview];
+//    }];
+//}
 
 #pragma mark -------- Setter --------
 
@@ -60,8 +64,8 @@
         _bgLayerView = [[UIView alloc] initWithFrame:self.containerView.bounds];
         _bgLayerView.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.4];
         _bgLayerView.userInteractionEnabled = YES;
-        UITapGestureRecognizer * tapgesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissClick)];
-        [_bgLayerView addGestureRecognizer:tapgesture];
+//        UITapGestureRecognizer * tapgesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissClick)];
+//        [_bgLayerView addGestureRecognizer:tapgesture];
     }
     return _bgLayerView;
 }

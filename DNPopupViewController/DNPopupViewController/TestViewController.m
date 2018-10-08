@@ -45,6 +45,8 @@
     
     [self addSubviewsForSuper];
     
+    [self setLeftBarButtonItem];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -65,13 +67,18 @@
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
     
-    self.tableView.translatesAutoresizingMaskIntoConstraints = false;
-    NSLayoutConstraint * top = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:0];
-    NSLayoutConstraint * left = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:0];
-    NSLayoutConstraint * bottom = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
-    NSLayoutConstraint * right = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1 constant:0];
-    
-    [self.view addConstraints:@[top,left,bottom,right]];
+//    self.tableView.translatesAutoresizingMaskIntoConstraints = false;
+//    NSLayoutConstraint * top = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:0];
+//    NSLayoutConstraint * left = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:0];
+//    NSLayoutConstraint * bottom = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
+//    NSLayoutConstraint * right = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1 constant:0];
+//
+//    [self.view addConstraints:@[top,left,bottom,right]];
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    self.tableView.frame = self.view.frame;
 }
 
 #pragma mark ----- addConstraintsForSuper -----
@@ -82,17 +89,34 @@
 
 #pragma mark ----- PrivateMethods -----
 
+- (void)setLeftBarButtonItem {
+    
+    UIBarButtonItem * leftItem = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:self action:@selector(dismidssClick)];
+    self.navigationItem.leftBarButtonItem = leftItem;
+}
+
+- (void)dismidssClick {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark ----- PublicMethods -----
 
 #pragma mark ----- NetWork request -----
 
 #pragma mark ----- UITableViewDelegate -----
-/**
  
  - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
  
+     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+     
+     UIViewController *vc = [[UIViewController alloc] init];
+     vc.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(255)/255.0
+                                               green:arc4random_uniform(255)/255.0
+                                                blue:arc4random_uniform(255)/255.0
+                                               alpha:1.0];
+     [self.navigationController pushViewController:vc animated:YES];
  }
- */
+ 
 
 #pragma mark ----- UITableViewDataSource -----
 

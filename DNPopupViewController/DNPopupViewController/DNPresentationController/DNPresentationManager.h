@@ -16,6 +16,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) DNPresentationConfig * config;
 
 + (instancetype)defaultManager;
+/**
+ *  @breif 创建方法
+ *
+ *  @param config 配置
+ *  @param superVC 弹窗的s父视图
+ *  @param subVC   将要显示的弹窗视图
+ */
 
 - (void)dn_popModalControllerWithConfig:(DNPresentationConfig *)config superVC:(UIViewController *)superVC subVC:(UIViewController *)subVC;
 

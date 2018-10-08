@@ -13,7 +13,8 @@
 #define SCREEN_W [UIScreen mainScreen].bounds.size.width
 
 @interface ViewController ()
-- (IBAction)modalButton:(id)sender;
+- (IBAction)centerButton:(id)sender;
+- (IBAction)buttomButton:(id)sender;
 
 @end
 
@@ -24,13 +25,21 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-
-- (IBAction)modalButton:(id)sender {
+- (IBAction)centerButton:(id)sender {
     
     TestViewController * viewControl = [[TestViewController alloc] init];
     UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:viewControl];
     
     DNPresentationConfig * config = [[DNPresentationConfig alloc] initWithModalSize:CGSizeMake(SCREEN_W*0.75, SCREEN_W) position:DNPresentationControllerPositionCenter];
+    [[DNPresentationManager defaultManager] dn_popModalControllerWithConfig:config superVC:self subVC:nav];
+}
+
+- (IBAction)buttomButton:(id)sender {
+    
+    TestViewController * viewControl = [[TestViewController alloc] init];
+    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:viewControl];
+    
+    DNPresentationConfig * config = [[DNPresentationConfig alloc] initWithModalSize:CGSizeMake(SCREEN_W, SCREEN_W) position:DNPresentationControllerPositionBottom];
     [[DNPresentationManager defaultManager] dn_popModalControllerWithConfig:config superVC:self subVC:nav];
 }
 @end

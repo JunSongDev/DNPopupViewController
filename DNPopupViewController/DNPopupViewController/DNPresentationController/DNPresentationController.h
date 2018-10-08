@@ -15,11 +15,11 @@ typedef NS_ENUM(NSInteger, DNPresentationControllerPosition) {
     DNPresentationControllerPositionBottom
 };
 
-typedef NS_ENUM(NSInteger, DNPresentationControllerPopType) {
-    
-    DNPresentationControllerPopPresent = 0,
-    DNPresentationControllerPopDismiss
-};
+//typedef NS_ENUM(NSInteger, DNPresentationControllerPopType) {
+//
+//    DNPresentationControllerPopPresent = 0,
+//    DNPresentationControllerPopDismiss
+//};
 
 @interface DNPresentationController : UIPresentationController
 

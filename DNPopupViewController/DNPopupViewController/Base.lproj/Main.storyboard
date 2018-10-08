@@ -18,23 +18,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ekd-Rs-OA7">
-                                <rect key="frame" x="156.5" y="318.5" width="62" height="30"/>
-                                <state key="normal" title="模态弹窗"/>
+                                <rect key="frame" x="156.5" y="298.5" width="62" height="30"/>
+                                <state key="normal" title="中央弹窗"/>
                                 <connections>
-                                    <action selector="modalButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sNU-bh-8gx"/>
+                                    <action selector="centerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S4z-lo-H55"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qn-8f-EuL">
+                                <rect key="frame" x="156.5" y="338.5" width="62" height="30"/>
+                                <state key="normal" title="底部弹窗"/>
+                                <connections>
+                                    <action selector="buttomButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5ai-AO-azM"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Ekd-Rs-OA7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bro-D7-txR"/>
-                            <constraint firstItem="Ekd-Rs-OA7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pEK-1c-6B4"/>
+                            <constraint firstItem="1qn-8f-EuL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="20" id="l6k-E2-wKc"/>
+                            <constraint firstItem="Ekd-Rs-OA7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-20" id="pEK-1c-6B4"/>
+                            <constraint firstItem="1qn-8f-EuL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qQm-3N-vbu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-20" y="107"/>
         </scene>
     </scenes>
 </document>
