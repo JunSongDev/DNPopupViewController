@@ -89,7 +89,6 @@
         }];
     }
     else {
-        
         presentedView.transform = CGAffineTransformMakeTranslation(0, self.modalSize.height);
         [UIView animateWithDuration:0.35 animations:^{
             weakself.presentationController.bgLayerView.alpha = 1.0f;
@@ -117,7 +116,6 @@
         }];
     }
     else {
-        
         [UIView animateWithDuration:0.35 animations:^{
             presentedView.transform = CGAffineTransformMakeTranslation(0, weakself.modalSize.height);
             weakself.presentationController.bgLayerView.alpha = 0.0f;

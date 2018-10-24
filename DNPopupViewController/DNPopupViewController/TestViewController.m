@@ -91,7 +91,7 @@
 
 - (void)setLeftBarButtonItem {
     
-    UIBarButtonItem * leftItem = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:self action:@selector(dismidssClick)];
+    UIBarButtonItem * leftItem = [[UIBarButtonItem alloc] initWithTitle:@"❌" style:UIBarButtonItemStylePlain target:self action:@selector(dismidssClick)];
     self.navigationItem.leftBarButtonItem = leftItem;
 }
 

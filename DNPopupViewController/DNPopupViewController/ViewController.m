@@ -41,7 +41,7 @@
     TestViewController * viewControl = [[TestViewController alloc] init];
     UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:viewControl];
     
-    DNPresentationConfig * config = [[DNPresentationConfig alloc] initWithModalSize:CGSizeMake(SCREEN_W, SCREEN_W) position:DNPresentationControllerPositionBottom];
+    DNPresentationConfig * config = [[DNPresentationConfig alloc] initWithModalSize:CGSizeMake(SCREEN_W, SCREEN_W) position:DNPresentationControllerPositionSheet];
     [[DNPresentationManager defaultManager] dn_popModalControllerWithConfig:config presentingVC:self presentedVC:nav];
 }
 @end

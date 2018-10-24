@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, DNPresentationControllerPosition) {
     DNPresentationControllerPositionCenter = 0,
-    DNPresentationControllerPositionBottom
+    DNPresentationControllerPositionSheet
 };
 
 //typedef NS_ENUM(NSInteger, DNPresentationControllerPopType) {

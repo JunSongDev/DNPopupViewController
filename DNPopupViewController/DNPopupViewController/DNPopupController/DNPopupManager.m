@@ -7,6 +7,7 @@
 //
 
 #import "DNPopupManager.h"
+#import "DNPopupConfig.h"
 
 static DNPopupManager *_manager = nil;
 
