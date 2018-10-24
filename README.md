@@ -1,5 +1,5 @@
 # DNPopupViewController    
-### 这厮一种利用 UIPresentationController 创建的模态弹窗   
+### 这是一种利用 UIPresentationController 创建的模态弹窗   
 ##### 一、DNPresentationConfig
 1. 在该类中配置一些基本的参数：
 ```
