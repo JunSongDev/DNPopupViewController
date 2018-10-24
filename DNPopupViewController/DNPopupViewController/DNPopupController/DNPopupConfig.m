@@ -98,7 +98,7 @@
     UIView *presentedView = [transitionContext viewForKey:UITransitionContextFromViewKey];
     
     __weak typeof(self) weakself = self;
-    if (self.controllerPosition == DNPopupControllerBottom) {
+    if (self.controllerPosition == DNPopupControllerCenter) {
         
         // 消失
         [UIView animateWithDuration:0.35 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{

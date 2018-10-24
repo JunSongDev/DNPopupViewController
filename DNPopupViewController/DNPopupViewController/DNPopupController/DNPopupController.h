@@ -10,7 +10,7 @@
 
 typedef NS_ENUM(NSInteger, DNPopupControllerPosition) {
     DNPopupControllerCenter = 0,
-    DNPopupControllerBottom
+    DNPopupControllerSheet
 };
 
 NS_ASSUME_NONNULL_BEGIN
