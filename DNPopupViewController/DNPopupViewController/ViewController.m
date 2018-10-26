@@ -11,6 +11,7 @@
 #import "TestViewController.h"
 
 #define SCREEN_W [UIScreen mainScreen].bounds.size.width
+#define SCREEN_H [UIScreen mainScreen].bounds.size.height
 
 @interface ViewController ()
 - (IBAction)centerButton:(id)sender;
@@ -44,4 +45,19 @@
     DNPresentationConfig * config = [[DNPresentationConfig alloc] initWithModalSize:CGSizeMake(SCREEN_W, SCREEN_W) position:DNPresentationControllerPositionSheet];
     [[DNPresentationManager defaultManager] dn_popModalControllerWithConfig:config presentingVC:self presentedVC:nav];
 }
+- (IBAction)leadButton:(id)sender {
+    
+    TestViewController * viewControl = [[TestViewController alloc] init];
+    
+    DNPresentationConfig * config = [[DNPresentationConfig alloc] initWithModalSize:CGSizeMake(SCREEN_W*0.8, SCREEN_H) position:DNPresentationControllerPositionLeading];
+    [[DNPresentationManager defaultManager] dn_popModalControllerWithConfig:config presentingVC:self presentedVC:viewControl];
+}
+- (IBAction)trailButton:(id)sender {
+    
+    TestViewController * viewControl = [[TestViewController alloc] init];
+    
+    DNPresentationConfig * config = [[DNPresentationConfig alloc] initWithModalSize:CGSizeMake(SCREEN_W*0.8, SCREEN_H) position:DNPresentationControllerPositionTrailing];
+    [[DNPresentationManager defaultManager] dn_popModalControllerWithConfig:config presentingVC:self presentedVC:viewControl];
+}
+
 @end

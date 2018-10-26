@@ -31,10 +31,28 @@
                                     <action selector="buttomButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5ai-AO-azM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Whi-1l-vhe">
+                                <rect key="frame" x="156.5" y="383.5" width="62" height="30"/>
+                                <state key="normal" title="右侧弹窗"/>
+                                <connections>
+                                    <action selector="trailButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I0o-2H-I8w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMh-uy-CkZ">
+                                <rect key="frame" x="156.5" y="253.5" width="62" height="30"/>
+                                <state key="normal" title="左侧弹窗"/>
+                                <connections>
+                                    <action selector="leadButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eJ2-kf-ThZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Whi-1l-vhe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bgs-y5-GOU"/>
                             <constraint firstItem="Ekd-Rs-OA7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bro-D7-txR"/>
+                            <constraint firstItem="Ekd-Rs-OA7" firstAttribute="top" secondItem="MMh-uy-CkZ" secondAttribute="bottom" constant="15" id="PWT-KA-sHR"/>
+                            <constraint firstItem="Whi-1l-vhe" firstAttribute="top" secondItem="1qn-8f-EuL" secondAttribute="bottom" constant="15" id="W0J-Ec-RYx"/>
+                            <constraint firstItem="MMh-uy-CkZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fGO-Nh-mlZ"/>
                             <constraint firstItem="1qn-8f-EuL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="20" id="l6k-E2-wKc"/>
                             <constraint firstItem="Ekd-Rs-OA7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-20" id="pEK-1c-6B4"/>
                             <constraint firstItem="1qn-8f-EuL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qQm-3N-vbu"/>

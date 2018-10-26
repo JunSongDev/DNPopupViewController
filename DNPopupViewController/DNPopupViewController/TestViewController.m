@@ -67,18 +67,11 @@
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
     
-//    self.tableView.translatesAutoresizingMaskIntoConstraints = false;
-//    NSLayoutConstraint * top = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:0];
-//    NSLayoutConstraint * left = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1 constant:0];
-//    NSLayoutConstraint * bottom = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
-//    NSLayoutConstraint * right = [NSLayoutConstraint constraintWithItem:self.tableView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1 constant:0];
-//
-//    [self.view addConstraints:@[top,left,bottom,right]];
-}
-
-- (void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
-    self.tableView.frame = self.view.frame;
+    self.tableView.translatesAutoresizingMaskIntoConstraints = false;
+    [self.tableView.topAnchor constraintEqualToAnchor:self.view.topAnchor].active = YES;
+    [self.tableView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = YES;
+    [self.tableView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
+    [self.tableView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
 }
 
 #pragma mark ----- addConstraintsForSuper -----

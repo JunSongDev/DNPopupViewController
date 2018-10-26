@@ -88,8 +88,26 @@
             [transitionContext completeTransition:YES];
         }];
     }
-    else {
+    else if (self.position == DNPresentationControllerPositionSheet) {
         presentedView.transform = CGAffineTransformMakeTranslation(0, self.modalSize.height);
+        [UIView animateWithDuration:0.35 animations:^{
+            weakself.presentationController.bgLayerView.alpha = 1.0f;
+            presentedView.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished) {
+            [transitionContext completeTransition:YES];
+        }];
+    }
+    else if (self.position == DNPresentationControllerPositionLeading) {
+        presentedView.transform = CGAffineTransformMakeTranslation(-self.modalSize.width, 0);
+        [UIView animateWithDuration:0.35 animations:^{
+            weakself.presentationController.bgLayerView.alpha = 1.0f;
+            presentedView.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished) {
+            [transitionContext completeTransition:YES];
+        }];
+    }
+    else {
+        presentedView.transform = CGAffineTransformMakeTranslation(self.modalSize.width, 0);
         [UIView animateWithDuration:0.35 animations:^{
             weakself.presentationController.bgLayerView.alpha = 1.0f;
             presentedView.transform = CGAffineTransformIdentity;
@@ -115,9 +133,27 @@
             [transitionContext completeTransition:YES];
         }];
     }
-    else {
+    else if (self.position == DNPresentationControllerPositionSheet) {
         [UIView animateWithDuration:0.35 animations:^{
             presentedView.transform = CGAffineTransformMakeTranslation(0, weakself.modalSize.height);
+            weakself.presentationController.bgLayerView.alpha = 0.0f;
+        } completion:^(BOOL finished) {
+            [presentedView removeFromSuperview];
+            [transitionContext completeTransition:YES];
+        }];
+    }
+    else if (self.position == DNPresentationControllerPositionLeading) {
+        [UIView animateWithDuration:0.35 animations:^{
+            presentedView.transform = CGAffineTransformMakeTranslation(-weakself.modalSize.width, 0);
+            weakself.presentationController.bgLayerView.alpha = 0.0f;
+        } completion:^(BOOL finished) {
+            [presentedView removeFromSuperview];
+            [transitionContext completeTransition:YES];
+        }];
+    }
+    else {
+        [UIView animateWithDuration:0.35 animations:^{
+            presentedView.transform = CGAffineTransformMakeTranslation(weakself.modalSize.width, 0);
             weakself.presentationController.bgLayerView.alpha = 0.0f;
         } completion:^(BOOL finished) {
             [presentedView removeFromSuperview];
