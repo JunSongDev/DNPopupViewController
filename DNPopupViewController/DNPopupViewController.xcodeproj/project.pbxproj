@@ -19,9 +19,6 @@
 		70AD504F21609B0C001AB883 /* DNPresentationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AD504E21609B0C001AB883 /* DNPresentationManager.m */; };
 		70AD50572160AA07001AB883 /* DNPresentationConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AD50562160AA07001AB883 /* DNPresentationConfig.m */; };
 		70AD505A2160BD72001AB883 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AD50592160BD72001AB883 /* TestViewController.m */; };
-		70E652FA216B2D3D00C02E40 /* DNPopupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E652F9216B2D3D00C02E40 /* DNPopupManager.m */; };
-		70E652FE216B322B00C02E40 /* DNPopupConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E652FD216B322B00C02E40 /* DNPopupConfig.m */; };
-		70E65301216B32B900C02E40 /* DNPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E65300216B32B900C02E40 /* DNPopupController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,12 +63,6 @@
 		70AD50562160AA07001AB883 /* DNPresentationConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNPresentationConfig.m; sourceTree = "<group>"; };
 		70AD50582160BD72001AB883 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		70AD50592160BD72001AB883 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
-		70E652F8216B2D3D00C02E40 /* DNPopupManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNPopupManager.h; sourceTree = "<group>"; };
-		70E652F9216B2D3D00C02E40 /* DNPopupManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNPopupManager.m; sourceTree = "<group>"; };
-		70E652FC216B322B00C02E40 /* DNPopupConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNPopupConfig.h; sourceTree = "<group>"; };
-		70E652FD216B322B00C02E40 /* DNPopupConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNPopupConfig.m; sourceTree = "<group>"; };
-		70E652FF216B32B900C02E40 /* DNPopupController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNPopupController.h; sourceTree = "<group>"; };
-		70E65300216B32B900C02E40 /* DNPopupController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNPopupController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +122,6 @@
 				70612718215F5F5900820837 /* LaunchScreen.storyboard */,
 				7061271B215F5F5900820837 /* Info.plist */,
 				7061271C215F5F5900820837 /* main.m */,
-				70E652F7216B2D0C00C02E40 /* DNPopupController */,
 				70AD505121609E2C001AB883 /* DNPresentationController */,
 				70AD50582160BD72001AB883 /* TestViewController.h */,
 				70AD50592160BD72001AB883 /* TestViewController.m */,
@@ -168,19 +158,6 @@
 				70AD50562160AA07001AB883 /* DNPresentationConfig.m */,
 			);
 			path = DNPresentationController;
-			sourceTree = "<group>";
-		};
-		70E652F7216B2D0C00C02E40 /* DNPopupController */ = {
-			isa = PBXGroup;
-			children = (
-				70E652F8216B2D3D00C02E40 /* DNPopupManager.h */,
-				70E652F9216B2D3D00C02E40 /* DNPopupManager.m */,
-				70E652FC216B322B00C02E40 /* DNPopupConfig.h */,
-				70E652FD216B322B00C02E40 /* DNPopupConfig.m */,
-				70E652FF216B32B900C02E40 /* DNPopupController.h */,
-				70E65300216B32B900C02E40 /* DNPopupController.m */,
-			);
-			path = DNPopupController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,13 +290,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70E65301216B32B900C02E40 /* DNPopupController.m in Sources */,
 				70612712215F5F5700820837 /* ViewController.m in Sources */,
 				7061271D215F5F5900820837 /* main.m in Sources */,
 				7061270F215F5F5700820837 /* AppDelegate.m in Sources */,
-				70E652FE216B322B00C02E40 /* DNPopupConfig.m in Sources */,
 				70AD50572160AA07001AB883 /* DNPresentationConfig.m in Sources */,
-				70E652FA216B2D3D00C02E40 /* DNPopupManager.m in Sources */,
 				70AD504F21609B0C001AB883 /* DNPresentationManager.m in Sources */,
 				7013BC49216059F50007D990 /* DNPresentationController.m in Sources */,
 				70AD505A2160BD72001AB883 /* TestViewController.m in Sources */,
