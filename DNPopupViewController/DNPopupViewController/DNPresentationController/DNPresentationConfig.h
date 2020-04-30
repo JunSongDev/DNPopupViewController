@@ -17,9 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) DNPresentationControllerPosition position;
 
-@property (nonatomic, assign) CGSize modalSize;
+@property (nonatomic, assign) CGSize  modalSize;
 
-- (instancetype)initWithModalSize:(CGSize)modelSize position:(DNPresentationControllerPosition)position;
+@property (nonatomic, assign) CGPoint modalPoint;
+
+- (instancetype)initWithModalSize:(CGSize)modelSize
+                         position:(DNPresentationControllerPosition)position;
 @end
 
 NS_ASSUME_NONNULL_END

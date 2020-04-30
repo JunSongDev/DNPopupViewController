@@ -36,14 +36,24 @@ static DNPresentationManager *_defaultManager = nil;
     return _defaultManager;
 }
 
-- (void)dn_popModalControllerWithConfig:(DNPresentationConfig *)config presentingVC:(UIViewController *)presentingVC presentedVC:(UIViewController *)presentedVC {
+- (void)dn_popModalControllerWithConfig:(DNPresentationConfig *)config
+                           presentingVC:(UIViewController *)presentingVC
+                            presentedVC:(UIViewController *)presentedVC {
     
     _config = config;
     presentedVC.transitioningDelegate  = self.config;
     presentedVC.modalPresentationStyle = UIModalPresentationCustom;
-    [presentingVC presentViewController:presentedVC animated:YES completion:^{
+    
+    //要先dismiss结束后才能重新present否则会出现Warning: Attempt to present
+    if (presentingVC.presentedViewController) {
         
-    }];
+        [presentingVC.presentedViewController dismissViewControllerAnimated:YES completion:^{
+            
+            [presentingVC presentViewController:presentedVC animated:YES completion:nil];
+        }];
+    } else {
+        [presentingVC presentViewController:presentedVC animated:YES completion:nil];
+    }
 }
 
 - (void)setConfig:(DNPresentationConfig *)config {

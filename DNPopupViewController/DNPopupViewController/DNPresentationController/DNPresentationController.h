@@ -14,7 +14,8 @@ typedef NS_ENUM(NSInteger, DNPresentationControllerPosition) {
     DNPresentationControllerPositionCenter = 0,
     DNPresentationControllerPositionSheet,
     DNPresentationControllerPositionLeading,
-    DNPresentationControllerPositionTrailing
+    DNPresentationControllerPositionTrailing,
+    DNPresentationControllerPositionCustom
 };
 
 //typedef NS_ENUM(NSInteger, DNPresentationControllerPopType) {
@@ -34,6 +35,11 @@ typedef NS_ENUM(NSInteger, DNPresentationControllerPosition) {
  *
  */
 //@property (nonatomic, assign) DNPresentationControllerPopType popType;
+
+/**
+ *  PresentationController's position point
+ */
+@property (nonatomic, assign) CGPoint controlPoint;
 
 /**
  *  PresentationController's size

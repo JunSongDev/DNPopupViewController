@@ -19,8 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  @brief 调用方法
  *
- *  @param config 将要弹出的界面的配置
- *  @param presentingVC 弹窗的s父视图
+ *  @param config       将要弹出的界面的配置
+ *  @param presentingVC 弹窗的父视图
  *  @param presentedVC  将要显示的弹窗视图
  */
 - (void)dn_popModalControllerWithConfig:(DNPresentationConfig *)config

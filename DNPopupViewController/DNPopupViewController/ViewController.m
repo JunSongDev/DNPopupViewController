@@ -59,5 +59,17 @@
     DNPresentationConfig * config = [[DNPresentationConfig alloc] initWithModalSize:CGSizeMake(SCREEN_W*0.8, SCREEN_H) position:DNPresentationControllerPositionTrailing];
     [[DNPresentationManager defaultManager] dn_popModalControllerWithConfig:config presentingVC:self presentedVC:viewControl];
 }
+- (IBAction)customPosition:(id)sender {
+    
+    TestViewController     *vc  = [[TestViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    DNPresentationConfig  *config = [[DNPresentationConfig alloc]
+                                     initWithModalSize:CGSizeMake(SCREEN_W*0.8, SCREEN_H*0.5) position:DNPresentationControllerPositionCustom];
+    config.modalPoint = CGPointMake(10, 100);
+    [[DNPresentationManager defaultManager] dn_popModalControllerWithConfig:config
+                                                               presentingVC:self
+                                                                presentedVC:nav];
+}
 
 @end

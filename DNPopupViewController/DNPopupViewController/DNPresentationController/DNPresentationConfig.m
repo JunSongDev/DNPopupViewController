@@ -29,10 +29,11 @@
 - (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source {
     
     DNPresentationController * controller = [[DNPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
-    controller.controlSize = self.modalSize;
+    controller.controlSize       = self.modalSize;
+    controller.controlPoint      = self.modalPoint;
     controller.contrllerPosition = self.position;
     
-    self.presentationController = controller;
+    self.presentationController  = controller;
     
     return controller;
 }
@@ -85,8 +86,7 @@
             } completion:^(BOOL finished) {
                 [transitionContext completeTransition:YES];
             }];
-        }
-        else if (self.position == DNPresentationControllerPositionSheet) {
+        } else if (self.position == DNPresentationControllerPositionSheet) {
             toView.transform = CGAffineTransformMakeTranslation(0, self.modalSize.height);
             [UIView animateWithDuration:0.35 animations:^{
                 weakself.presentationController.bgLayerView.alpha = 1.0f;
@@ -94,8 +94,7 @@
             } completion:^(BOOL finished) {
                 [transitionContext completeTransition:YES];
             }];
-        }
-        else if (self.position == DNPresentationControllerPositionLeading) {
+        } else if (self.position == DNPresentationControllerPositionLeading) {
             toView.transform = CGAffineTransformMakeTranslation(-self.modalSize.width, 0);
             [UIView animateWithDuration:0.35 animations:^{
                 weakself.presentationController.bgLayerView.alpha = 1.0f;
@@ -103,11 +102,21 @@
             } completion:^(BOOL finished) {
                 [transitionContext completeTransition:YES];
             }];
-        }
-        else {
+        } else if (self.position == DNPresentationControllerPositionTrailing) {
             toView.transform = CGAffineTransformMakeTranslation(self.modalSize.width, 0);
             [UIView animateWithDuration:0.35 animations:^{
                 weakself.presentationController.bgLayerView.alpha = 1.0f;
+                toView.transform = CGAffineTransformIdentity;
+            } completion:^(BOOL finished) {
+                [transitionContext completeTransition:YES];
+            }];
+        }  else {
+            toView.alpha = 0.0f;
+            toView.transform = CGAffineTransformMakeScale(1.2, 1.2);
+            // 动画弹出
+            [UIView animateWithDuration:0.35 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                weakself.presentationController.bgLayerView.alpha = 1.0f;
+                toView.alpha = 1.0f;
                 toView.transform = CGAffineTransformIdentity;
             } completion:^(BOOL finished) {
                 [transitionContext completeTransition:YES];
@@ -127,8 +136,7 @@
                 [fromView removeFromSuperview];
                 [transitionContext completeTransition:YES];
             }];
-        }
-        else if (self.position == DNPresentationControllerPositionSheet) {
+        } else if (self.position == DNPresentationControllerPositionSheet) {
             [UIView animateWithDuration:0.35 animations:^{
                 fromView.transform = CGAffineTransformMakeTranslation(0, weakself.modalSize.height);
                 weakself.presentationController.bgLayerView.alpha = 0.0f;
@@ -136,8 +144,7 @@
                 [fromView removeFromSuperview];
                 [transitionContext completeTransition:YES];
             }];
-        }
-        else if (self.position == DNPresentationControllerPositionLeading) {
+        } else if (self.position == DNPresentationControllerPositionLeading) {
             [UIView animateWithDuration:0.35 animations:^{
                 fromView.transform = CGAffineTransformMakeTranslation(-weakself.modalSize.width, 0);
                 weakself.presentationController.bgLayerView.alpha = 0.0f;
@@ -145,10 +152,17 @@
                 [fromView removeFromSuperview];
                 [transitionContext completeTransition:YES];
             }];
-        }
-        else {
+        } else if (self.position == DNPresentationControllerPositionTrailing) {
             [UIView animateWithDuration:0.35 animations:^{
                 fromView.transform = CGAffineTransformMakeTranslation(weakself.modalSize.width, 0);
+                weakself.presentationController.bgLayerView.alpha = 0.0f;
+            } completion:^(BOOL finished) {
+                [fromView removeFromSuperview];
+                [transitionContext completeTransition:YES];
+            }];
+        } else {
+            [UIView animateWithDuration:0.35 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                fromView.alpha = 0.0f;
                 weakself.presentationController.bgLayerView.alpha = 0.0f;
             } completion:^(BOOL finished) {
                 [fromView removeFromSuperview];
@@ -169,4 +183,7 @@
     _modalSize = modalSize;
 }
 
+- (void)setModalPoint:(CGPoint)modalPoint {
+    _modalPoint = modalPoint;
+}
 @end

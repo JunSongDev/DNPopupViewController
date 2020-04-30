@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,44 +17,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ekd-Rs-OA7">
-                                <rect key="frame" x="156.5" y="298.5" width="62" height="30"/>
+                                <rect key="frame" x="156.5" y="268.5" width="62" height="30"/>
                                 <state key="normal" title="中央弹窗"/>
                                 <connections>
                                     <action selector="centerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S4z-lo-H55"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qn-8f-EuL">
-                                <rect key="frame" x="156.5" y="338.5" width="62" height="30"/>
+                                <rect key="frame" x="156.5" y="318.5" width="62" height="30"/>
                                 <state key="normal" title="底部弹窗"/>
                                 <connections>
                                     <action selector="buttomButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5ai-AO-azM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Whi-1l-vhe">
-                                <rect key="frame" x="156.5" y="383.5" width="62" height="30"/>
+                                <rect key="frame" x="156.5" y="368.5" width="62" height="30"/>
                                 <state key="normal" title="右侧弹窗"/>
                                 <connections>
                                     <action selector="trailButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I0o-2H-I8w"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMh-uy-CkZ">
-                                <rect key="frame" x="156.5" y="253.5" width="62" height="30"/>
+                                <rect key="frame" x="156.5" y="218.5" width="62" height="30"/>
                                 <state key="normal" title="左侧弹窗"/>
                                 <connections>
                                     <action selector="leadButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eJ2-kf-ThZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sp-h3-I7q">
+                                <rect key="frame" x="149" y="418.5" width="77" height="30"/>
+                                <state key="normal" title="自定义位置"/>
+                                <connections>
+                                    <action selector="customPosition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hfX-gg-BwB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Whi-1l-vhe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bgs-y5-GOU"/>
-                            <constraint firstItem="Ekd-Rs-OA7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bro-D7-txR"/>
-                            <constraint firstItem="Ekd-Rs-OA7" firstAttribute="top" secondItem="MMh-uy-CkZ" secondAttribute="bottom" constant="15" id="PWT-KA-sHR"/>
-                            <constraint firstItem="Whi-1l-vhe" firstAttribute="top" secondItem="1qn-8f-EuL" secondAttribute="bottom" constant="15" id="W0J-Ec-RYx"/>
-                            <constraint firstItem="MMh-uy-CkZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fGO-Nh-mlZ"/>
-                            <constraint firstItem="1qn-8f-EuL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="20" id="l6k-E2-wKc"/>
-                            <constraint firstItem="Ekd-Rs-OA7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-20" id="pEK-1c-6B4"/>
-                            <constraint firstItem="1qn-8f-EuL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qQm-3N-vbu"/>
+                            <constraint firstItem="Ekd-Rs-OA7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DPt-bZ-msr"/>
+                            <constraint firstItem="Whi-1l-vhe" firstAttribute="top" secondItem="1qn-8f-EuL" secondAttribute="bottom" constant="20" id="GVH-q6-KBj"/>
+                            <constraint firstItem="MMh-uy-CkZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hyy-f2-KFI"/>
+                            <constraint firstItem="1qn-8f-EuL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TZu-iu-xXm"/>
+                            <constraint firstItem="9sp-h3-I7q" firstAttribute="top" secondItem="Whi-1l-vhe" secondAttribute="bottom" constant="20" id="UfN-XX-rRH"/>
+                            <constraint firstItem="1qn-8f-EuL" firstAttribute="top" secondItem="Ekd-Rs-OA7" secondAttribute="bottom" constant="20" id="UxH-Dq-UOW"/>
+                            <constraint firstItem="9sp-h3-I7q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dEw-x6-RO5"/>
+                            <constraint firstItem="Whi-1l-vhe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gto-RR-GQv"/>
+                            <constraint firstItem="1qn-8f-EuL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iRE-tj-cFI"/>
+                            <constraint firstItem="Ekd-Rs-OA7" firstAttribute="top" secondItem="MMh-uy-CkZ" secondAttribute="bottom" constant="20" id="s6v-El-4nk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
